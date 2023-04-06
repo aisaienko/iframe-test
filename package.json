@@ -1,0 +1,28 @@
+{
+  "name": "iframe-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "firebase deploy",
+    "build": "node_modules/.bin/webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aisaienko/iframe-test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aisaienko/iframe-test/issues"
+  },
+  "homepage": "https://github.com/aisaienko/iframe-test#readme",
+  "dependencies": {
+    "firebase": "^9.19.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
