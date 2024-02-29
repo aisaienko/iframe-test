@@ -1,0 +1,103 @@
+@import './games/memorymatch';
+@import './tools/modal';
+
+@include tools-modal;
+@include games-memorymatch;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.main {
+    min-height: 1000px;
+}
+
+.page-title {
+    text-align: center;
+    margin: 30px;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+form {
+    color: #000;
+    text-align: left;
+    margin: 10px 0;
+}
+
+fieldset,form {
+    display: block;
+}
+
+fieldset {
+    border: 0;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+
+    &.base-checkbox {
+        flex-direction: row;
+        padding: 20px 0 20px 0;
+
+        label {
+            margin: 0;
+        }
+    }
+}
+
+label {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin: 10px 0;
+}
+
+input,input[type=email],input[type=password],input[type=text],select,textarea {
+    border: 2px solid #dce0e5;
+    border-radius: 0;
+    clear: both;
+    display: block;
+    font-family: inherit;
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin: 0;
+    outline: 0;
+    padding: 0.5rem 0.5rem 0.5rem;
+    width: 100%
+}
+
+input[type=checkbox] {
+    position: relative;
+    display: inline-block;
+    width: 1.1875rem;
+    height: 1.1875rem;
+    border: 2px solid #000;
+    border-radius: 0;
+    margin-right: 1.25rem;
+    padding: 0.25rem;
+}
+
+button.btn_login {
+    background-color: black;
+    color: white;
+    display: block;
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+.h-hidden {
+    display: none !important;
+}

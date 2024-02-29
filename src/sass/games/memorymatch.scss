@@ -1,0 +1,96 @@
+@mixin width($max){
+    @media (max-width: $max){
+        @content;
+    }
+}
+
+@mixin games-memorymatch {
+    .wrap {
+        position: relative;
+        max-width: 600px;
+        height: 800px;
+        min-height: 500px;
+        padding-bottom: 20px;
+        margin: 10px auto;
+    }
+
+    .game {
+        transform-style: preserve-3d;
+        perspective: 500px;
+        min-height: 100%;
+        height: 100%;
+    }
+
+    @keyframes matchAnim {
+        0% {
+            background: #bcffcc;
+        }
+        100% {
+            background: white;
+        }
+    }
+
+    .card {
+        float: left;
+        width: 50%;
+        height: 25%;
+        padding: 5px;
+        text-align: center;
+        display: block;
+        perspective: 500px;
+        position: relative;
+        cursor: pointer;
+        z-index: 50;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        @include width(800px){
+            width: 50%;
+            height: 16.666%;
+        }
+        .inside {
+            width: 100%;
+            height: 100%;
+            display: block;
+            transform-style: preserve-3d;
+            transition: .4s ease-in-out;
+            background: white;
+
+            &.picked, &.matched {
+                transform: rotateY(180deg);
+            }
+            &.matched {
+                animation: 1s matchAnim ease-in-out;
+                animation-delay: .4s;
+            }
+        }
+
+        .front, .back {
+            border: 1px solid black;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+
+            img {
+                max-width: 100%;
+                display: block;
+                margin: 0 auto;
+                max-height: 100%;
+            }
+        }
+        .front {
+            transform: rotateY(-180deg);
+            @include width(800px){
+                padding: 5px;
+            }
+        }
+        .back{
+            transform: rotateX(0); // fix firefox backface-visibility.
+            @include width(800px){
+                padding: 10px;
+            }
+        }
+    }
+}

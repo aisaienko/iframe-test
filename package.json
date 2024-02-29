@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "firebase deploy",
+    "deploy": "npm run build && firebase deploy",
     "build": "node_modules/.bin/webpack"
   },
   "repository": {
@@ -19,9 +19,17 @@
   },
   "homepage": "https://github.com/aisaienko/iframe-test#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "firebase": "^9.19.1"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "pym.js": "^1.3.2",
+    "sass": "^1.60.0",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.2",
     "webpack": "^5.78.0",
     "webpack-cli": "^5.0.1"
   }
